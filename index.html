@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -8,30 +8,36 @@
 </head>
 <body>
     <header>
-        <img src="Images/Perfil.png" alt="Foto de perfil" style="width: 100px; height: auto;">
+        <img src="Images/Perfil.png" alt="Foto de perfil">
         <h1>Matheus Barbiot</h1>
-        <a href="https://www.instagram.com/art_barbiot?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
-        <a href="https://github.com/Matheus-Barbiot">Github</a>
-        <a href="https://www.behance.net/ovoruim">Behance</a>
-        <a href="https://barbiot.itch.io/">Itch.io</a>
+        <p class="text">Olá! Me chamo Matheus Barbiot Cardoso, sou um jovem de 17 anos do Rio Grande do sul que ama arte e programação.</p>
+        <div id="links">
+            <a href="https://www.instagram.com/art_barbiot?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+            <a href="https://github.com/Matheus-Barbiot">Github</a>
+            <a href="https://www.behance.net/ovoruim">Behance</a>
+            <a href="https://barbiot.itch.io/">Itch.io</a>
+        </div>
     </header>
     <main>
-        <p>Bem vindo, me chamo Matheus Barbiot Cardoso, sou um jovem de 17 anos que ama arte e programação. Por isso, me tornei um desenvolvedor de jogos independentes. Além de artista de digital e boxeador amador. Abaixo pode ver uma lista de portifólios que possuo.</p>
-        <hr>
-        <div class="Portifolio">
-            <img>
-            <p>bla bla bla</p>
-        </div>
-
-        <div class="Portifolio">
-            <img>
-            <p>bla bla bla</p>
-        </div>
-
-        <div class="Portifolio">
-            <img>
-            <p>bla bla bla</p>
-        </div>
+        <article>
+            <h2>Meus Portifolios</h2>
+            <div id="lista-portifolio">
+                <div class="portifolio" id="arte">
+                    <img src="Images/Artes_Digitais.jpg">
+                    <div>
+                        <h3>Artes Digitais</h3>
+                        <p>Veja meu portifolio de artes digitais que fiz, inclui ilustrações e character design</p>
+                    </div>
+                </div>
+                <div class="portifolio" id="gamedev">
+                    <img src="Images/gamedev.png">
+                    <div>
+                        <h3>Gamedev</h3>
+                        <p>Jogue os jogos que eu já fiz utilizando o UPBGE</p>
+                    </div>
+                </div>
+            </div>
+        </article>
     </main>
     <footer>
         <p>Site criado por Matheus Barbiot</p>

@@ -140,9 +140,9 @@ main > article {
 }
 
 .portifolio img {
-    background-color: var(--branco-suave);
-    width: 175px;
-    height: auto;
+    background-color: transparent;
+    width: 200px;
+    height: 150px;
     border-radius: 20px;
     object-fit: cover;
     object-position: top; 
@@ -153,13 +153,12 @@ main > article {
     transform: scale(1.3);
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0px black;
-}
+}    
 
 .portifolio > div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px;    border-radius: 10px;
     width: 200px;
     padding: 10px;
 }
@@ -224,7 +223,9 @@ footer p {
 
     .portifolio img {
         height: 150px;
-        width: auto;
+        width: 200;
+        object-fit: cover;
+        border-radius: 10px;
         transition: transform 0.3s ease;
     }
 

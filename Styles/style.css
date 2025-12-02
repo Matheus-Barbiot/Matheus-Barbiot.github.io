@@ -13,7 +13,7 @@
 }
 
 body {
-    background: linear-gradient(45deg, var(--roxo-principal), var(--chumbo-escuro));
+    background: linear-gradient(45deg, var(--roxo-principal),  var(--chumbo-escuro));
     background-attachment: fixed;
     background-size: cover;
     color: white;
@@ -24,6 +24,7 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    gap: 40px;
 }
 
 
@@ -76,11 +77,10 @@ header > img:hover {
     border-radius: 20px;
     font-weight: 900;
     text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
 #links a:hover {
-    border: 1px solid var(--branco-suave);
-    box-shadow: 0 0 15px 5px var(--roxo-suave);
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -118,14 +118,9 @@ main > section > h1 {
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    transform: scale(1);
-    transition: box-shadow 0.3s ease
+    transition: transform 0.5s ease;
 }
 
-.portifolio:hover {
-    box-shadow: 0 0 10px 1px var(--roxo-suave);
-    cursor: pointer;
-}
 
 .portifolio img {
     background-color: transparent;
@@ -133,21 +128,20 @@ main > section > h1 {
     height: 125px;
     border-radius: 20px;
     object-fit: cover;
-    object-position: top; 
-    transition: transform 0.3s ease;
+    object-position: center; 
 }
 
-.portifolio img:hover {
-    transform: scale(1.3);
-    object-fit: cover;
-    border-radius: 10px;
-}    
+.portifolio:hover {
+    transform: scale(1.1);
+    object-fit: contain;
+}
 
 .portifolio > div {
     display: flex;
     text-align: center;
     flex-direction: column;
-    gap: 10px;    border-radius: 10px;
+    gap: 10px;    
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -172,14 +166,9 @@ main > section > h1 {
 
 /* -------- FOOTER -------- */
 footer {
-    background-color: var(--chumbo-escuro);
     width: 100%;
     height: 100px;
-    margin-top: 50px;
-}
-
-footer p {
-    margin-top: 40px;
+    padding: 50px;
 }
 
 
@@ -193,8 +182,7 @@ footer p {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr auto;
-
-        grid-template-areas: "header main" "footer footer";
+        grid-template-areas: "header main" "header footer";
     }
 
     header {grid-area: header;}
@@ -208,11 +196,9 @@ footer p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 80px;
     }
 
     main > section {
-        margin: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -243,6 +229,7 @@ footer p {
 
 
     footer {
+        padding: 0;
         text-align: center;
     }
 

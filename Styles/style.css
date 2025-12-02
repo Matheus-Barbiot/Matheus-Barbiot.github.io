@@ -12,11 +12,6 @@
     --branco-suave: #F2F2F3;
 }
 
-/* Áreas do GRID */
-header { grid-area: header; }
-main   { grid-area: main; }
-footer { grid-area: footer; }
-
 body {
     background: linear-gradient(45deg, var(--roxo-principal), var(--chumbo-escuro));
     background-attachment: fixed;
@@ -26,17 +21,19 @@ body {
 
     /* layout mobile (default) */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    transition: background 0.5s ease 
+    flex-direction: column;
+    height: 100vh;
 }
 
 
 /* -------- HEADER -------- */
 header {
     padding: 20px;
-    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 header > img {
@@ -45,6 +42,10 @@ header > img {
     height: 125px;
     transform: scale(1);
     transition: 70ms;
+}
+
+header > p.text {
+    line-height: 2;
 }
 
 header > img:hover {
@@ -60,14 +61,17 @@ header > img:hover {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-top: 20px;
+    align-items: start;
 }
+
 
 #links a {
     background-color: var(--roxo-principal);
     display: block;
     width: 200px;
     color: var(--branco-suave);
+    --roxo-suave: #C9A8FF;
+    --cinza-medio: #3A3D40;
     padding: 10px;
     border-radius: 20px;
     font-weight: 900;
@@ -83,27 +87,10 @@ header > img:hover {
 
 
 /* -------- MAIN -------- */
-h2 {
-    margin-top: 10px;
+main > section > h1 {
+    margin: 20px;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    max-width: 600px;
-}
-
-main > article {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-around;
-    padding: 20px;
-    border-radius: 20px;
-    min-height: 300px;
-    text-align: center;
-}
 
 .text {
     text-align: justify;
@@ -123,8 +110,9 @@ main > article {
 .portifolio {
     background-color: var(--chumbo-escuro);
     padding: 20px;
-    height: 150px;
-    width: 80%;
+    height: 120px;
+    width: 85vw;
+    max-width: 500px;
     margin: auto;
     border-radius: 25px;
     display: flex;
@@ -141,8 +129,8 @@ main > article {
 
 .portifolio img {
     background-color: transparent;
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 125px;
     border-radius: 20px;
     object-fit: cover;
     object-position: top; 
@@ -157,16 +145,29 @@ main > article {
 
 .portifolio > div {
     display: flex;
+    text-align: center;
     flex-direction: column;
     gap: 10px;    border-radius: 10px;
-    width: 200px;
     padding: 10px;
 }
 
-.portifolio p {
+.portifolio > div > a {
+    background-color: var(--roxo-suave);
+    width: 100px;
+    padding: 15px;
     text-align: center;
-    line-height: 1.7;
+    border-radius: 25px;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--roxo-principal);
+    margin-top: 20px;
+    transition: box-shadow 0.5s ease;
 }
+
+.portifolio > div > a:hover {
+    box-shadow: 0 0 5px 5px var(--roxo-principal);
+}
+
 
 
 /* -------- FOOTER -------- */
@@ -187,18 +188,21 @@ footer p {
     
     body {
         background: linear-gradient(45deg, var(--chumbo-escuro), var(--roxo-principal));
+        background-attachment: fixed;
+        background-size: cover;
         display: grid;
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 1fr auto;
 
-        grid-template-areas:
-            "header main"
-            "header main"
-            "footer footer";
-
-        min-height: 100vh;
-        text-align: left;
+        grid-template-areas: "header main" "footer footer";
     }
+
+    header {grid-area: header;}
+    main {
+        grid-area: main;
+        margin-top: 100px;
+    }
+    footer {grid-area: footer}
 
     header {
         display: flex;
@@ -207,6 +211,14 @@ footer p {
         padding-top: 80px;
     }
 
+    main > section {
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
     #lista-portifolio {
         display: flex;
         flex-direction: row;
@@ -233,4 +245,6 @@ footer p {
     footer {
         text-align: center;
     }
+
+
 }
